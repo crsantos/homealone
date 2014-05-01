@@ -9,11 +9,18 @@
 module.exports = {
 
   attributes: {
-  	
-  	/* e.g.
-  	nickname: 'string'
-  	*/
-    
+
+    email: {
+      type: 'string',
+      unique: true,
+      required: true
+    },
+    token: {
+      type: 'string',
+      required: true,
+      minLength: 6
+    }
+
   }
 
 };
