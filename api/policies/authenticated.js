@@ -2,7 +2,7 @@
 * @Author: crsantos
 * @Date:   2014-04-30 09:30:02
 * @Last Modified by:   crsantos
-* @Last Modified time: 2014-05-01 10:41:20
+* @Last Modified time: 2014-05-01 12:20:21
 */
 
 /**
@@ -14,10 +14,10 @@ module.exports = function (req, res, done) {
 
   passport.authenticate('bearer', {session: false}, function(err, user, info) {
 
-    console.log("Authenticating the user: "+user);
-    console.log("err: "+err);
-    console.log("info: "+info);
-    // console.log(req);
+    sails.log.info("Authenticating user: "+JSON.stringify(user));
+    sails.log.info("Error?: "+err);
+    sails.log.info("Info: "+JSON.stringify(info));
+
     if (err) return done(err);
     if (user) return done();
 
