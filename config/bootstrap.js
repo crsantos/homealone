@@ -10,7 +10,11 @@
 
 module.exports.bootstrap = function (cb) {
 
-  // It's very important to trigger this callack method when you are finished 
+  // It's very important to trigger this callack method when you are finished
   // with the bootstrap!  (otherwise your server will never lift, since it's waiting on the bootstrap)
+  console.log("Creating users:.");
+  User.create({email:'carlosricardosantos@gmail.com', token:'1234567890'});
+  User.create({email:'crsantos@mail.com', token:'0987654321'});
+
   cb();
 };

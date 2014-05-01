@@ -9,11 +9,19 @@
 module.exports = {
 
   attributes: {
-  	
-  	/* e.g.
-  	nickname: 'string'
-  	*/
-    
-  }
+
+    name: {
+      type: 'string',
+      unique: true,
+      required: true
+    },
+
+    status: {
+      type: 'bool',
+      required: true,
+      defaultsTo: false
+    },
+
+  },
 
 };

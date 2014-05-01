@@ -6,6 +6,8 @@
  * @docs		:: http://sailsjs.org/#!documentation/models
  */
 
+var bcrypt = require('bcrypt');
+
 module.exports = {
 
   attributes: {
@@ -20,7 +22,21 @@ module.exports = {
       required: true,
       minLength: 6
     }
+  },
 
+/*
+  beforeCreate: function(user, cb) {
+    bcrypt.genSalt(10, function(err, salt) {
+      bcrypt.hash(user.token, salt, function(err, hash) {
+        if (err) {
+          console.log(err);
+          cb(err);
+        }else{
+          user.token = hash;
+          cb(null, user);
+        }
+      });
+    });
   }
-
+  */
 };
