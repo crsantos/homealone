@@ -15,6 +15,8 @@
  * @docs        :: http://sailsjs.org/#!documentation/controllers
  */
 
+// var gpio = require("pi-gpio");
+
 module.exports = {
 
 
@@ -33,6 +35,14 @@ module.exports = {
     sails.log.info("Received status to act: "+status);
 
     if (status && !isNaN(status)) {
+
+      // TODO: act on relay PIN
+
+      // gpio.open(16, "output", function(err) {        // Open pin 16 for output
+      //     gpio.write(16, 1, function() {            // Set pin 16 high (1)
+      //         gpio.close(16);                        // Close pin 16
+      //       });
+      // });
 
       return res.json({info:"Acted", newstatus:status},200);
 
