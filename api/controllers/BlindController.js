@@ -16,15 +16,29 @@
  */
 
 module.exports = {
-    
-  
+
+
 
 
   /**
    * Overrides for the settings in `config/controllers.js`
    * (specific to BlindController)
    */
-  _config: {}
+  _config: {},
 
-  
+  act: function(req, res) {
+
+    var status = req.param('status');
+
+    sails.log.info("Received status to act: "+status);
+
+    if (status && !isNaN(status)) {
+
+      return res.json({info:"Acted", newstatus:status},200);
+
+    };
+
+    return res.json('Do not be evil!', 401);
+  }
+
 };
