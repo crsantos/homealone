@@ -2,7 +2,7 @@
 * @Author: crsantos
 * @Date:   2014-05-23 18:56:01
 * @Last Modified by:   crsantos
-* @Last Modified time: 2014-05-23 19:47:00
+* @Last Modified time: 2014-05-23 19:49:34
 */
 
 var gpio = require("pi-gpio");
@@ -19,9 +19,9 @@ if (pinNumber) {
           throw err;
         }
         console.log("Read: "+ value);    // The current state of the pin
-
-        gpio.write(pinNumber, !value, function() {                     // Set pin 3 high (1)
-          console.log("wrote "+!value+" to " + pinNumber);
+        var newValue = 1 - value;
+        gpio.write(pinNumber, newValue, function() {                     // Set pin 3 high (1)
+          console.log("wrote "+newValue+" to " + pinNumber);
           gpio.close(pinNumber);
         });
 
