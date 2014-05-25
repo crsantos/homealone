@@ -22,6 +22,20 @@ module.exports = {
       defaultsTo: false
     },
 
+    last_status: {
+      type: 'bool',
+      required: false,
+      defaultsTo: true
+    },
+
+  },
+
+  beforeUpdate: function(blind, cb) {
+
+    // save previous state
+    last_status = status;
+    cb(null, user);
+
   },
 
 };
