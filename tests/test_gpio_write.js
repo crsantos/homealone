@@ -2,7 +2,7 @@
 * @Author: crsantos
 * @Date:   2014-05-23 18:56:01
 * @Last Modified by:   crsantos
-* @Last Modified time: 2014-05-24 00:30:58
+* @Last Modified time: 2014-05-30 23:13:03
 */
 
 var gpio = require("pi-gpio");
@@ -15,19 +15,11 @@ if ( process.argv.length == 4 ) {
   gpio.open(pinNumber, "output", function(err) {              // Open pin 3 for output
     console.log("Opened " + pinNumber);
 
-      gpio.read(pinNumber, function(err, value) {
+    gpio.write(pinNumber, state, function() {                     // Set pin 3 high (1)
+      console.log("wrote "+state+" to " + pinNumber);
+      gpio.close(pinNumber);
+    });
 
-        if(err) {
-          throw err;
-        }
-        console.log("Read: "+ value);    // The current state of the pin
-        var newValue = 1 - value;
-        gpio.write(pinNumber, newValue, function() {                     // Set pin 3 high (1)
-          console.log("wrote "+newValue+" to " + pinNumber);
-          gpio.close(pinNumber);
-        });
-
-      });
   });
 
 } else {
