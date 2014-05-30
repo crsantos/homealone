@@ -2,7 +2,7 @@
 * @Author: crsantos
 * @Date:   2014-05-23 18:56:01
 * @Last Modified by:   crsantos
-* @Last Modified time: 2014-05-30 23:31:04
+* @Last Modified time: 2014-05-30 23:32:36
 */
 
 var gpio = require("pi-gpio");
@@ -16,7 +16,7 @@ if ( process.argv.length == 3 ) {
   gpio.read(pinNumber, function(err, value) {
 
     if(err) {
-      throw err;
+      console.log(err);
     }
     console.log("Read: "+ value); // The current state of the pin
 
