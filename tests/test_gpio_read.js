@@ -2,12 +2,12 @@
 * @Author: crsantos
 * @Date:   2014-05-23 18:56:01
 * @Last Modified by:   crsantos
-* @Last Modified time: 2014-05-30 23:13:49
+* @Last Modified time: 2014-05-30 23:17:43
 */
 
 var gpio = require("pi-gpio");
 
-if ( process.argv.length == 4 ) {
+if ( process.argv.length == 3 ) {
 
   var pinNumber = process.argv[2]
 
