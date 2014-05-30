@@ -2,7 +2,7 @@
 * @Author: crsantos
 * @Date:   2014-05-23 18:56:01
 * @Last Modified by:   crsantos
-* @Last Modified time: 2014-05-30 23:26:45
+* @Last Modified time: 2014-05-30 23:31:04
 */
 
 var gpio = require("pi-gpio");
@@ -19,6 +19,8 @@ if ( process.argv.length == 3 ) {
       throw err;
     }
     console.log("Read: "+ value); // The current state of the pin
+
+    gpio.close(pinNumber);
 
   });
 
