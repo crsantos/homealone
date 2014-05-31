@@ -15,12 +15,10 @@
  * @docs        :: http://sailsjs.org/#!documentation/controllers
  */
 
-// var gpio = require("pi-gpio");
+var gpio = require("pi-gpio");
+var constants = require("../../config/constants");
 
 module.exports = {
-
-
-
 
   /**
    * Overrides for the settings in `config/controllers.js`
@@ -36,13 +34,12 @@ module.exports = {
 
     if (status && !isNaN(status)) {
 
-      // TODO: act on relay PIN
-
-      // gpio.open(16, "output", function(err) {        // Open pin 16 for output
-      //     gpio.write(16, 1, function() {            // Set pin 16 high (1)
-      //         gpio.close(16);                        // Close pin 16
-      //       });
-      // });
+      // TODO: Refactor this into a PINManager
+      gpio.open(constants.PIN1, "output", function(err) {        // Open pin X for output
+          gpio.write(constants.PIN1, status, function() {        // Set pin X to the desired state
+              gpio.close(constants.PIN1);                        // Close pin X
+            });
+      });
 
       return res.json({info:"Acted", newstatus:status},200);
 
