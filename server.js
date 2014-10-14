@@ -39,9 +39,9 @@ function respond(req, res, next) {
 
   }
 
-  gpio.open(constants.PIN2, "output", function(err) {        // Open pin X for output
-      gpio.write(constants.PIN2, status, function() {        // Set pin X to the desired state
-          gpio.close(constants.PIN2);                        // Close pin X
+  gpio.open(constants.PIN1, "output", function(err) {        // Open pin X for output
+      gpio.write(constants.PIN1, status, function() {        // Set pin X to the desired state
+          gpio.close(constants.PIN1);                        // Close pin X
         });
   });
 
