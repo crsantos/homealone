@@ -1,26 +1,20 @@
 {
-    "name": "homealone",
+    "name": "homeautomator",
     "private": true,
     "version": "0.0.1",
-    "description": "a Sails application",
+    "description": "a homeautomator",
     "dependencies": {
-        "sails": "0.9.16",
-        "grunt": "0.4.1",
-        "sails-disk": "~0.9.0",
-        "sails-memory": "~0.9.1",
-        "ejs": "0.8.4",
-        "optimist": "0.3.4",
         "pi-gpio": "0.0.5",
-        "passport": "0.2.0",
-        "passport-http-bearer": "1.0.1",
-        "bcrypt": "0.7.8",
-        "request": "2.36.0"
+        "crypto": "0.0.3",
+        "restify": "2.8.1",
+        "save": "0.0.20",
+        "bunyan": "0.23.1"
     },
     "scripts": {
-        "start": "node app.js",
-        "debug": "node debug app.js"
+        "start": "node server.js",
+        "debug": "node debug server.js"
     },
-    "main": "app.js",
+    "main": "server.js",
     "repository": "",
     "author": "",
     "license": ""

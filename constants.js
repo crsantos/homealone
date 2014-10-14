@@ -2,7 +2,7 @@
 * @Author: crsantos
 * @Date:   2014-05-30 23:41:35
 * @Last Modified by:   crsantos
-* @Last Modified time: 2014-05-30 23:42:13
+* @Last Modified time: 2014-06-01 23:26:05
 */
 
 function define(name, value) {
@@ -12,5 +12,8 @@ function define(name, value) {
     });
 }
 
+define("APPNAME", 'homealone');
+define("username", 'username');
+define("password", 'password');
 define("PIN1", 11); // GPIO Pin #0
 define("PIN2", 12); // GPIO Pin #1
